@@ -43,8 +43,9 @@ iNut_Faces 			= 2;	// number edges/faces to the nut
 // - nozzleSize 	: pass the size of the nozzle used on the printer for some fine-tuning of filament compensations
 // - renderQuality 	: pass the render quality to be used, defaults to screen
 
-module Hardware_Initialize(nozzleSize = 0.4, renderQuality = gRender_ScreenQuality) {
-
+module Hardware_Initialize (nozzleSize = 0.4, renderQuality = gRender_ScreenQuality) {
+	echo("Initializing Hardware Library: nozzleSize = ", nozzleSize, "; Render Quality = ", renderQuality, ";");
+	$fn = renderQuality;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
