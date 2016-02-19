@@ -1,9 +1,12 @@
 # OpenSCAD-Hardware
 An OpenSCAD Library of Functions related to various assembly hardware with compensation for 3D Printing tolerances
 
+Written by bcantin@kitchissippi-robotics.com<br>
+Copyright &copy; Kitchissippi Robotics 2016
+
 ## Preamble
 
-*Necessity is the mother of invention*
+*Necessity is the mother of invention*<br>
 _- Unknown_
 
 
