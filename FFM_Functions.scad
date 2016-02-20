@@ -6,37 +6,17 @@
 // Written by bcantin@kitchissippi-robotics.com
 // Copyright (c) 2015-2016 Kitchissippi Robotics
 // ---------------------------------------------------------------------------------------------------------------------
-// Metric_Bolt.scad
-//
-// Metric Hardware values
+// Common Hardware
 // *********************************************************************************************************************
 
-// Metric Bolt Hardware
+// ---------------------------------------------------------------------------------------------------------------------
+// FFM Printer Compensation Functions
+// .....................................................................................................................
 
-// M3 Bolt
-// -----------------------------------------------------------------------------
+if (undef == NOZZLE_SIZE) {
+	NOZZLE_SIZE = 0.4;
+}
 
-hwM3_Bolt_ShaftDiameter = 3;
+function HW_Hole(diameter) = (diameter <= 10 ? diameter + ((NOZZLE_SIZE * 0.5) * 2): diameter);
 
-// Allen Key style head
-hwM3_Bolt_AllenHeadDiameter = 5.4;
-hwM3_Bolt_AllenHeadHeight = 2.8;
-
- 
-hwM3_Bolt_AllenHeadSize = [5.4, 2.8, 3];	// [HeadDiameter, HeadHeight, ShaftDiameter]
-
-
-// M4 Bolt
-// -----------------------------------------------------------------------------
-
-hwM4_Bolt_ShaftDiameter = 4;
-
-// Allen Key style head
-hwM4_Bolt_AllenHeadDiameter = 6.8;
-hwM4_Bolt_AllenHeadHeight = 4.3;
-
-hwM4_Bolt_AllenHeadSize = [6.8, 4.3, 4]; 	// [HeadDiameter, HeadHeight, ShaftDiameter]
-
-// Hex Wrench style head
-hwM4_Bolt_HexHeadDiameter = 7.8;	
-hwM4_Bolt_HexHeadHeight = 2.8;
+//function HW_Hole(diameter) = diameter + 0.25;
