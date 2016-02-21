@@ -44,10 +44,6 @@ gcFacetSmall 		= 16 * RENDER_LEVEL;
 gcFacetMedium 		= 24 * RENDER_LEVEL;
 gcFacetLarge 		= 32 * RENDER_LEVEL;
 
-gcRender_Screen		= 1;	// low render level, faster for development
-gcRender_Draft		= 2;	// more facets for draft printing
-gcRender_Production	= 4;	// lots of facets, really smooth curves
-
 // *********************************************************************************************************************
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -83,7 +79,7 @@ include <FFM_Functions.scad>
 module Draw_hwBolt(_boltSize, _boltLength) {
 	% union() {
 		// bolt shaft
-		cylinder(h = _boltLength, d = _boltSize[iBolt_ShaftDiameter], center = false);
+		cylinder(h = _boltLength, d = _boltSize[iBolt_ShaftDiameter], $fn=gcFacetSmall, center = false);
 
 		// bolt head Allen Key type
 		if (_boltSize[iBolt_HeadStyle] == iBoltHead_Allen) {
@@ -91,7 +87,7 @@ module Draw_hwBolt(_boltSize, _boltLength) {
 				translate([0,0,_boltLength])
 					cylinder(h = _boltSize[iBolt_HeadHeight], d = _boltSize[iBolt_HeadDiameter], $fn=gcFacetSmall, center = false);
 				translate([0,0,_boltLength  + 1])
-					cylinder(h = _boltSize[iBolt_HeadHeight], d = _boltSize[iBolt_HeadDiameter] / 2, $fn=gcFacetSmall, center = false);
+					cylinder(h = _boltSize[iBolt_HeadHeight], d = _boltSize[iBolt_HeadDiameter] / 2, $fn=5, center = false);
 			}
 		} else if (_boltSize[iBolt_HeadStyle] == iBoltHead_Pan) {
 			hull() {

@@ -17,6 +17,6 @@ if (undef == NOZZLE_SIZE) {
 	NOZZLE_SIZE = 0.4;
 }
 
-function HW_Hole(diameter) = (diameter <= 10 ? diameter + ((NOZZLE_SIZE * 0.5) * 2): diameter);
+function HW_Hole(diameter) = (diameter <= 10 ? diameter + (NOZZLE_SIZE /3) * 2: diameter);
 
 //function HW_Hole(diameter) = diameter + 0.25;
