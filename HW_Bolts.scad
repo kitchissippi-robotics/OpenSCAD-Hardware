@@ -61,6 +61,8 @@ hwM4_Bolt_AllenHead = [6.8, 4.3, 4, iBoltHead_Allen]; 	// [HeadDiameter, HeadHei
 hwM4_Bolt_HexHeadDiameter = 7.8;
 hwM4_Bolt_HexHeadHeight = 2.8;
 
+hwM4_Bolt_AllenHead = [7.8, 2.8, 4, iBoltHead_Hex]; 	// [HeadDiameter, HeadHeight, ShaftDiameter]
+
 // ---------------------------------------------------------------------------------------------------------------------
 // SAE Bolt Hardware - Pan head
 // .....................................................................................................................
@@ -96,6 +98,9 @@ module Draw_hwBolt(_boltSize, _boltLength) {
 				translate([0,0,_boltLength])
 						cylinder(h = _boltSize[iBolt_HeadHeight], d = _boltSize[iBolt_ShaftDiameter], $fn=gcFacetSmall, center = false);
 			}
+		}  else if (_boltSize[iBolt_HeadStyle] == iBoltHead_Hex) {
+			translate([0,0,_boltLength])
+				cylinder(h = _boltSize[iBolt_HeadHeight], d = _boltSize[iBolt_HeadDiameter], $fn=5, center = false);
 		}
 	}
 }
