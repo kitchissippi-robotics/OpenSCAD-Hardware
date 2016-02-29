@@ -61,7 +61,7 @@ hwM4_Bolt_AllenHead = [6.8, 4.3, 4, iBoltHead_Allen]; 	// [HeadDiameter, HeadHei
 hwM4_Bolt_HexHeadDiameter = 7.8;
 hwM4_Bolt_HexHeadHeight = 2.8;
 
-hwM4_Bolt_AllenHead = [7.8, 2.8, 4, iBoltHead_Hex]; 	// [HeadDiameter, HeadHeight, ShaftDiameter]
+hwM4_Bolt_HexHead = [7.8, 2.8, 4, iBoltHead_Hex]; 	// [HeadDiameter, HeadHeight, ShaftDiameter]
 
 // ---------------------------------------------------------------------------------------------------------------------
 // SAE Bolt Hardware - Pan head
